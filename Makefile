@@ -1,5 +1,5 @@
 all: main.o core.o framecode.o
-	g++ -g main.o core.o framecode.o -o myapp.out
+	g++ -g main.o core.o framecode.o -o a1
 main.o: main.cpp core.h
 	g++ -g -c main.cpp -o main.o
 core.o: core.cpp core.h
@@ -7,4 +7,4 @@ core.o: core.cpp core.h
 framecode.o: framecode.cpp
 	g++ -g -c framecode.cpp -o framecode.o
 clean:
-	rm *.o myapp.out
+	rm *.o a1
