@@ -32,6 +32,26 @@
                 "/mnt/d": "d:\\"
             },
             "preLaunchTask": "buildwsl"
+        },
+        {
+            "name": "C++ Launch Linux",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/a1",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": true,
+            "MIMode": "gdb",
+                "setupCommands": [
+                    {
+                        "description": "Enable pretty-printing for gdb",
+                        "text": "-enable-pretty-printing",
+                        "ignoreFailures": true
+                    }
+                ],
+            "preLaunchTask": "buildwsl"
         }
     ]
 }
