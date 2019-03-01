@@ -102,6 +102,7 @@ void LoadConfiguration()
 		string str2(str);
 		
 		str1 = str1.substr(1, str1.length() - 3);
+
 		if (str1 == "WelcomeText" && str0 == "{"){
 			type = 1;
 			continue;
@@ -174,6 +175,7 @@ void ProcessUserChoice()
 	if (!isinteger(line))
 	{
 		cout << "Invalid input, please input an integer number." << endl;
+		sleep(ret.introTime);
 	}
 	else
 	{
@@ -181,6 +183,7 @@ void ProcessUserChoice()
 		if (num < 1 || num > ret.lenMenu)
 		{
 			cout << "Please select a number from 1 to 5." << endl;
+			sleep(ret.introTime);
 		}
 		else
 		{
