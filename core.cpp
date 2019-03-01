@@ -25,8 +25,8 @@ void ProcessUserChoice();
 ///--------------------------------------------------------------------
 
 bool __coreInitialized = false; /// an example of global variable
-int __userChoice;               /// a global variable to store user choice
-bool __isExiting = false;       /// this variable should be turn on when the program exits
+int __userChoice;				/// a global variable to store user choice
+bool __isExiting = false;		/// this variable should be turn on when the program exits
 // TODO: add more global variables to complete tasks
 
 struct Item
@@ -85,48 +85,56 @@ void LoadConfiguration()
 		stringstream ss(line);
 		string str1;
 		ss >> str1;
-		if (str1 == "{" || str1 == "}," || str1 == ""){
+		if (str1 == "{" || str1 == "}," || str1 == "")
+		{
 			continue;
 		}
-		else if (str1 == "}"){
+		else if (str1 == "}")
+		{
 			break;
 		}
-		
+
 		char str[256];
 		ss.getline(str, 256, '\"');
 		string str0(str);
 		stringstream ss0(str0);
 		ss0 >> str0;
-		
+
 		ss.getline(str, 256, '\"');
 		string str2(str);
-		
+
 		str1 = str1.substr(1, str1.length() - 3);
 
-		if (str1 == "WelcomeText" && str0 == "{"){
+		if (str1 == "WelcomeText" && str0 == "{")
+		{
 			type = 1;
 			continue;
 		}
-		else if (str1 == "Menu" && str0 == "{"){
+		else if (str1 == "Menu" && str0 == "{")
+		{
 			type = 2;
 			continue;
 		}
-		else if (str1 == "IntroTime") {
+		else if (str1 == "IntroTime")
+		{
 			ret.introTime = stod(str0);
 			continue;
 		}
 
-		if (type == 0){
+		if (type == 0)
+		{
 			ret.intro[ret.lenIntro].str1 = str1;
 			ret.intro[ret.lenIntro].str2 = str2;
 			ret.lenIntro++;
 		}
-		else if (type == 1){
+		else if (type == 1)
+		{
 			ret.wel[ret.lenWel].str1 = str1;
 			ret.wel[ret.lenWel].str2 = str2;
 			ret.lenWel++;
 		}
-		else if (type == 2){
+		else if (type == 2)
+		{
 			ret.menu[ret.lenMenu].str1 = str1;
 			ret.menu[ret.lenMenu].str2 = str2;
 			ret.lenMenu++;
@@ -138,7 +146,8 @@ void LoadConfiguration()
 void LoadMenu()
 {
 	// TODO: write code to load menu from the configuration file
-	for (int i = 0; i < ret.lenWel; i++) {
+	for (int i = 0; i < ret.lenWel; i++)
+	{
 		cout << ret.wel[i].str2 << endl;
 	}
 	sleep(ret.introTime);
@@ -159,7 +168,7 @@ bool isinteger(string const &n) noexcept
 {
 	if (isdigit(n[0]) || (n.size() > 1 && (n[0] == '-' || n[0] == '+')))
 	{
-		for (string::size_type i{ 1 }; i < n.size(); ++i)
+		for (string::size_type i{1}; i < n.size(); ++i)
 			if (!isdigit(n[i]))
 				return false;
 		return true;
@@ -187,7 +196,7 @@ void ProcessUserChoice()
 		}
 		else
 		{
-			cout << ret.menu[num-1].str2 << endl;
+			cout << ret.menu[num - 1].str2 << endl;
 			__isExiting = true;
 		}
 	}
