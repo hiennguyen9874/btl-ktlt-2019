@@ -17,10 +17,11 @@
   },
   "Menu": {
     "opt1": "Introduction",
-    "opt2": "Login",
-    "opt3": "Registration",
-    "opt4": "Help",
-    "opt5": "Exit"
+    "opt5": "Login",
+    "opt3": "Help",
+    "opt4": "Registration",
+    "opt2": "Exit",
+    "opt6": "KDEN"
   },
   "IntroTime": 3
 }
