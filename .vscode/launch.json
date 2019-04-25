@@ -8,28 +8,32 @@
             "name": "C++ Launch WSL",
             "type": "cppdbg",
             "request": "launch",
-            "program": "/mnt/d/KDen/btl_ktlt_2019/a1",
-            "args": [],
+            "program": "/mnt/e/btl_ktlt_2019/a1",
+            "args": [
+                "-fThreading"
+            ],
             "stopAtEntry": false,
-            "cwd": "/mnt/d/KDen/btl_ktlt_2019",
+            "cwd": "/mnt/e/btl_ktlt_2019",
             "environment": [],
             "externalConsole": true,
             "MIMode": "gdb",
-                "setupCommands": [
-                    {
-                        "description": "Enable pretty-printing for gdb",
-                        "text": "-enable-pretty-printing",
-                        "ignoreFailures": true
-                    }
-                ],
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
             "pipeTransport": {
                 "pipeCwd": "",
-                "pipeProgram": "C:\\Windows\\System32\\bash.exe",
-                "pipeArgs": ["-c"],
+                "pipeProgram": "c:\\windows\\sysnative\\bash.exe",
+                "pipeArgs": [
+                    "-c"
+                ],
                 "debuggerPath": "/usr/bin/gdb"
             },
             "sourceFileMap": {
-                "/mnt/d": "d:\\"
+                "/mnt/e": "e:\\"
             },
             "preLaunchTask": "buildwsl"
         },
@@ -44,13 +48,13 @@
             "environment": [],
             "externalConsole": true,
             "MIMode": "gdb",
-                "setupCommands": [
-                    {
-                        "description": "Enable pretty-printing for gdb",
-                        "text": "-enable-pretty-printing",
-                        "ignoreFailures": true
-                    }
-                ],
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
             "preLaunchTask": "buildwsl"
         }
     ]

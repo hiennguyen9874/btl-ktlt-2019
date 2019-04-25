@@ -13,7 +13,7 @@ void Process();
  * Student can use global variables in their implementation.
  */
 
-int main(int narg, char** argv) {
+int main(int arc, char** argv) {
     Initialization();
     Process();
     Finalization();

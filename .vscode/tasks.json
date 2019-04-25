@@ -6,9 +6,15 @@
         {
             "label": "buildwsl",
             "type": "shell",
-            "command": "make",
+            "command": "g++",
             "args": [
-                "all"
+                "-g",
+                "-lm",
+                "core.cpp",
+                "framecode.cpp",
+                "main.cpp",
+                "-o",
+                "a1"
             ],
             "group": {
                 "kind": "build",
